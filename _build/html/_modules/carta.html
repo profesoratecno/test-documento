@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>carta &mdash; documentación de test-documento - 0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> test-documento
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code.html">Code</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">test-documento</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Código de módulo</a> &raquo;</li>
+        
+      <li>carta</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Código fuente para carta</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Carta"><a class="viewcode-back" href="../code.html#carta.Carta">[documentos]</a><span></span><span class="k">class</span> <span class="nc">Carta</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    La clase Carta define una carta y para iniciarla</span>
+<span class="sd">    hay que definir los atributos número y palo</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palo</span><span class="p">,</span> <span class="n">numero</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_palo</span> <span class="o">=</span> <span class="n">palo</span>        <span class="c1">#definimos atributo palo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_numero</span> <span class="o">=</span> <span class="n">numero</span>    <span class="c1">#definimos atribto n&#39;úmero de carta</span>
+        
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_numero</span> <span class="o">+</span> <span class="s2">&quot; de &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_palo</span> <span class="c1">#este metodo representa una carta</span>
+    
+    <span class="nd">@property</span>        <span class="c1">#el decorador property necesita un método getter (coger),tiene retorno</span>
+    <span class="k">def</span> <span class="nf">palo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_palo</span>
+    
+    <span class="nd">@palo</span><span class="o">.</span><span class="n">setter</span>     <span class="c1">#el decorador atributo.setter(establecer) no lleva retorno</span>
+    <span class="k">def</span> <span class="nf">palo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palo</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">palo</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;oros&quot;</span><span class="p">,</span> <span class="s2">&quot;copas&quot;</span><span class="p">,</span> <span class="s2">&quot;espadas&quot;</span><span class="p">,</span> <span class="s2">&quot;bastos&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_palo</span> <span class="o">=</span> <span class="n">palo</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Esto no es un palo!&quot;</span><span class="p">)</span>
+            
+    <span class="nd">@property</span>      <span class="c1">#el decorador property necesita un método getter (coger),tiene retorno</span>
+    <span class="k">def</span> <span class="nf">numero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_numero</span>
+
+    <span class="nd">@numero</span><span class="o">.</span><span class="n">setter</span> <span class="c1">#el decorador atributo.setter(establecer) no lleva retorno</span>
+    <span class="k">def</span> <span class="nf">numero</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numero</span><span class="p">):</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;Sota&quot;</span><span class="p">,</span> <span class="s2">&quot;Caballo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rey&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">valid</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_numero</span> <span class="o">=</span> <span class="n">numero</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este número no es válido&quot;</span><span class="p">)</span></div>
+    
+
+<span class="n">mi_carta</span> <span class="o">=</span> <span class="n">Carta</span><span class="p">(</span><span class="s2">&quot;espadas&quot;</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">)</span> <span class="c1">#objeto concreto de la clase Carta</span>
+
+<span class="c1">#ordenes</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">mi_carta</span><span class="p">)</span> <span class="c1">#imprime mi carta</span>
+
+<div class="viewcode-block" id="Mazo"><a class="viewcode-back" href="../code.html#carta.Mazo">[documentos]</a><span class="k">class</span> <span class="nc">Mazo</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    La clase Mazo define un mazo de cartas en orden</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cartas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cartas</span><span class="p">)</span>
+        
+        
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">palos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;oros&quot;</span><span class="p">,</span> <span class="s2">&quot;copas&quot;</span><span class="p">,</span> <span class="s2">&quot;espadas&quot;</span><span class="p">,</span> <span class="s2">&quot;bastos&quot;</span><span class="p">]</span>
+        <span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Sota&quot;</span><span class="p">,</span> <span class="s2">&quot;Caballo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rey&quot;</span><span class="p">]</span>    
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cartas</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Carta</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">palos</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numeros</span> <span class="p">]</span>
+        
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cartas_en_mazo</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cartas</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Mi mazo contiene &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cartas_en_mazo</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; cartas en total&quot;</span></div>
+        
+<span class="n">mi_mazo</span> <span class="o">=</span> <span class="n">Mazo</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_mazo</span><span class="p">)</span>
+
+            
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, profesoratecno
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
